@@ -108,8 +108,12 @@ class App:
                         angle
                     )
 
-                    new_bubble.vel.x = pyxel.cos(angle) * MAX_BUBBLE_SPEED
-                    new_bubble.vel.y = pyxel.sin(angle) * MAX_BUBBLE_SPEED
+                    new_bubble.vel.x = (
+                        pyxel.cos(angle) * MAX_BUBBLE_SPEED + bubble.vel.x
+                    )
+                    new_bubble.vel.y = (
+                        pyxel.sin(angle) * MAX_BUBBLE_SPEED + bubble.vel.y
+                    )
 
                     self.bubbles.append(new_bubble)
 
